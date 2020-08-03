@@ -1,21 +1,28 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { deleteItemFromList } from '../../actions';
+import React, { useContext } from 'react';
 
+//Context
+import { ContextToModal } from '../../ContextModal';
+import { ContextToId } from '../../ContextId';
+
+// Styles
 import { Article } from './styles';
 
+// Icons
 import trash from '../../assets/images/trash.svg';
 
 const Item = ({ item, id }) => {
-  const dispatch = useDispatch();
-  const handleDelete = () => {
-    dispatch(deleteItemFromList(id));
+  const [active, setActive] = useContext(ContextToModal);
+  const [idToDelete, setIdToDelete] = useContext(ContextToId);
+
+  const confirmDeleteModal = () => {
+    setActive(true);
+    setIdToDelete(id);
   };
 
   const numberToArray = id.toString();
   const lastNumberOfArray = numberToArray.charAt(numberToArray.length - 1);
 
-  const colorItem = {
+  const dynamicStyles = {
     backgroundColor: `${
       lastNumberOfArray === '0' || lastNumberOfArray === '1'
         ? '#FD564C'
@@ -26,15 +33,25 @@ const Item = ({ item, id }) => {
         : lastNumberOfArray === '6' || lastNumberOfArray === '7'
         ? '#FFE061'
         : '#1E429F'
-    }`
+    }`,
+    filter: `${active ? 'blur(2px)' : 'blur(0)'}`
   };
+
   return (
-    <Article style={colorItem}>
-      <p>{item}</p>
-      <button type='button' onClick={handleDelete}>
-        <img src={trash} alt='trash' />
-      </button>
-    </Article>
+    <>
+      <Article style={dynamicStyles}>
+        <p>{item}</p>
+        {!active ? (
+          <button type='button' onClick={confirmDeleteModal}>
+            <img src={trash} alt='trash' />
+          </button>
+        ) : (
+          <button type='button'>
+            <img src={trash} alt='trash' />
+          </button>
+        )}
+      </Article>
+    </>
   );
 };
 

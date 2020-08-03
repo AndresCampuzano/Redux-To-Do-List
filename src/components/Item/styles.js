@@ -21,6 +21,7 @@ export const Article = styled.article`
   button {
     border: none;
     background: none;
+    width: 30px;
     outline: none;
     text-align: left;
   }

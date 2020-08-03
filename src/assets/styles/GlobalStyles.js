@@ -21,6 +21,9 @@ const GlobalStyles = createGlobalStyle`
         color: ${({ theme }) => theme.darkBlue};
         text-decoration: none;
     }
+    button {
+        cursor: pointer;
+    }
     #root {
         margin: 0 auto;
         margin-top: 80px;

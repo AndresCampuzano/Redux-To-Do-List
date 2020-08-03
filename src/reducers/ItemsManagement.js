@@ -1,16 +1,12 @@
 const initialState = {
   items: [
     {
-      item: 'Milk',
-      id: 4561278
+      item: 'Call the doctor',
+      id: Math.floor(Math.random() * 9999999)
     },
     {
-      item: 'Eggs',
-      id: 5640024
-    },
-    {
-      item: 'Bread',
-      id: 1047996
+      item: 'Walk the dog 🐶',
+      id: Math.floor(Math.random() * 9999999)
     }
   ]
 };

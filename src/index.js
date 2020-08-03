@@ -1,8 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+
+// Styles
+import { ThemeProvider } from 'styled-components';
+import Variables from './assets/styles/Variables';
+import GlobalStyles from './assets/styles/GlobalStyles';
+// App
+import App from './Pages/Home';
+
 import * as serviceWorker from './serviceWorker';
+
+// Redux
 import { createStore } from 'redux';
 import allReducers from './reducers';
 import { Provider } from 'react-redux';
@@ -14,9 +22,12 @@ const myStore = createStore(
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={myStore}>
-      <App />
-    </Provider>
+    <ThemeProvider theme={Variables}>
+      <GlobalStyles />
+      <Provider store={myStore}>
+        <App />
+      </Provider>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

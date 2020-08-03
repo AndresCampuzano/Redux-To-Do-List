@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 const ListItems = () => {
   const list = useSelector(state => state.list);
-  const isLogged = useSelector(state => state.isLogged);
+  // const isLogged = useSelector(state => state.isLogged);
   // console.log('list: ', list);
   // console.log('isLogged: ', isLogged);
 

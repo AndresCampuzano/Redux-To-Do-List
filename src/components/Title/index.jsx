@@ -6,7 +6,7 @@ import { ContextToModal } from '../../ContextModal';
 
 const Title = () => {
   // Context
-  const [active, setActive] = useContext(ContextToModal);
+  const [active] = useContext(ContextToModal);
 
   const dynamicStyles = {
     filter: `${active ? 'blur(2px)' : 'blur(0)'}`

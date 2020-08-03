@@ -9,7 +9,7 @@ import ModalDelete from '../../components/ModalDelete';
 import { ContextToModal } from '../../ContextModal';
 
 const Home = () => {
-  const [active, setActive] = useContext(ContextToModal);
+  const [active] = useContext(ContextToModal);
 
   return (
     <>

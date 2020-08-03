@@ -13,10 +13,10 @@ import { Modal, ButtonModalDelete, ButtonModalCancel } from './styles';
 
 const ModalDelete = () => {
   const [active, setActive] = useContext(ContextToModal);
-  const [idToDelete, setIdToDelete] = useContext(ContextToId);
+  const [idToDelete] = useContext(ContextToId);
   const dispatch = useDispatch();
   console.log('active from Modal: ', active);
-  console.log('idToDelete from Modal: ', idToDelete);
+  // console.log('idToDelete from Modal: ', idToDelete);
 
   const handleDelete = () => {
     dispatch(deleteItemFromList(idToDelete));

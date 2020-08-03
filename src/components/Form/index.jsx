@@ -13,7 +13,7 @@ import me from '../../assets/images/me.png';
 
 const Form = () => {
   // Context just for modal blur
-  const [active, setActive] = useContext(ContextToModal);
+  const [active] = useContext(ContextToModal);
   const dynamicStyles = {
     filter: `${active ? 'blur(2px)' : 'blur(0)'}`
   };

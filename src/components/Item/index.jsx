@@ -13,6 +13,7 @@ import trash from '../../assets/images/trash.svg';
 const Item = ({ item, id }) => {
   const [active, setActive] = useContext(ContextToModal);
   const [idToDelete, setIdToDelete] = useContext(ContextToId);
+  console.log('item to delete: ', idToDelete);
 
   const confirmDeleteModal = () => {
     setActive(true);

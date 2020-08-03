@@ -9,7 +9,7 @@ import calendar from '../../assets/images/calendar.svg';
 
 const TaskNumber = () => {
   // Context
-  const [active, setActive] = useContext(ContextToModal);
+  const [active] = useContext(ContextToModal);
 
   // Redux
   const list = useSelector(state => state.list);

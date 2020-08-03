@@ -16,5 +16,6 @@ export const MainEnhancer = compose(
   persistState('list'),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
+// MainEnhancer are complements for Redux, it's optional to use them
 
 // export default allReducers;

@@ -12,17 +12,14 @@ import * as serviceWorker from './serviceWorker';
 
 // Redux
 import { createStore } from 'redux';
-import allReducers from './reducers';
+import { AllReducers, MainEnhancer } from './reducers';
 import { Provider } from 'react-redux';
 
 // Context > just for modal (for now)
 import { ContextModal } from './ContextModal';
 import { ContextId } from './ContextId';
 
-const myStore = createStore(
-  allReducers,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+const myStore = createStore(AllReducers, MainEnhancer);
 
 ReactDOM.render(
   <React.StrictMode>

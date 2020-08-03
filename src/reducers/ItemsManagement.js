@@ -1,13 +1,13 @@
 const initialState = {
   items: [
-    {
-      item: 'Call the doctor',
-      id: Math.floor(Math.random() * 9999999)
-    },
-    {
-      item: 'Walk the dog 🐶',
-      id: Math.floor(Math.random() * 9999999)
-    }
+    // {
+    //   item: 'Call the doctor',
+    //   id: Math.floor(Math.random() * 9999999)
+    // },
+    // {
+    //   item: 'Walk the dog 🐶',
+    //   id: Math.floor(Math.random() * 9999999)
+    // }
   ]
 };
 const ItemsManagement = (state = initialState, action) => {

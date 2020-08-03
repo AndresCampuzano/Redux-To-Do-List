@@ -1,12 +1,20 @@
 import ItemsManagement from './ItemsManagement';
 import loggedReducer from './isLogged';
-import { combineReducers } from 'redux';
+import { combineReducers, compose } from 'redux';
 
-const allReducers = combineReducers({
+// LocalStorage
+import persistState from 'redux-localstorage';
+
+export const AllReducers = combineReducers({
   list: ItemsManagement,
   isLogged: loggedReducer
 });
-
 // list is used for list.map
 
-export default allReducers;
+// LocalStorage: persistState('list'),
+export const MainEnhancer = compose(
+  persistState('list'),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
+// export default allReducers;

@@ -6,7 +6,8 @@ import { ThemeProvider } from 'styled-components';
 import Variables from './assets/styles/Variables';
 import GlobalStyles from './assets/styles/GlobalStyles';
 // App
-import App from './Pages/Home';
+// import App from './Pages/Home';
+import App from './Pages/Login';
 
 import * as serviceWorker from './serviceWorker';
 

@@ -1,13 +1,12 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { handleLoginAction } from '../../actions'
+import { navigate } from '@reach/router'
 
 import { firebaseConfig, githubAuthProvider } from '../../utils/firebase'
 
 const Login = () => {
     const dispatch = useDispatch()
-    const isLogged = useSelector((state) => state.isLogged)
-    console.log('isLogged: ', isLogged)
 
     const handleLoginWithGithub = () => {
         firebaseConfig
@@ -16,6 +15,7 @@ const Login = () => {
             .then((response) => {
                 console.log(response)
                 dispatch(handleLoginAction(true))
+                navigate('/list')
             })
             .catch((error) => console.log(error))
     }
@@ -25,6 +25,7 @@ const Login = () => {
             .signOut()
             .then(() => {
                 dispatch(handleLoginAction(false))
+                navigate('/')
             })
             .catch((error) => console.log(error))
     }

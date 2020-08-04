@@ -11,29 +11,29 @@ import App from './routes/App'
 
 import * as serviceWorker from './serviceWorker'
 
+// Context > just for modal (for now)
+import { ContextModal } from './ContextModal'
+import { ContextId } from './ContextId'
+
 // Redux
 import { createStore } from 'redux'
 import { AllReducers, MainEnhancer } from './reducers'
 import { Provider } from 'react-redux'
 
-// Context > just for modal (for now)
-import { ContextModal } from './ContextModal'
-import { ContextId } from './ContextId'
-
 const myStore = createStore(AllReducers, MainEnhancer)
 
 ReactDOM.render(
     <React.StrictMode>
-        <ThemeProvider theme={Variables}>
-            <GlobalStyles />
-            <Provider store={myStore}>
-                <ContextModal>
-                    <ContextId>
+        <Provider store={myStore}>
+            <ContextModal>
+                <ContextId>
+                    <ThemeProvider theme={Variables}>
+                        <GlobalStyles />
                         <App />
-                    </ContextId>
-                </ContextModal>
-            </Provider>
-        </ThemeProvider>
+                    </ThemeProvider>
+                </ContextId>
+            </ContextModal>
+        </Provider>
     </React.StrictMode>,
     document.getElementById('root')
 )

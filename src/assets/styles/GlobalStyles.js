@@ -34,7 +34,7 @@ const GlobalStyles = createGlobalStyle`
             margin-top: 0px;
         }
         width: ${({ theme }) => theme.width};
-        height: 736px;
+        min-height: 736px;
         @media (max-height: 1024px) {
             height: auto;
         }

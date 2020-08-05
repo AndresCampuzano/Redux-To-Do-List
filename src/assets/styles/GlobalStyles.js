@@ -6,7 +6,7 @@ const GlobalStyles = createGlobalStyle`
     }
     body {
         display: flex;
-        @media (max-height: 1024px) {
+        @media (max-height: 1024px) and (max-width: 767px) {
             display: block;
         }
         justify-content: center;
@@ -29,20 +29,20 @@ const GlobalStyles = createGlobalStyle`
     }
     #root {
         margin: 0 auto;
-        margin-top: 80px;
-        @media (max-height: 1024px) {
+        margin-top: -50px;
+        @media (max-height: 1024px) and (max-width: 767px) {
             margin-top: 0px;
         }
         width: ${({ theme }) => theme.width};
-        min-height: 736px;
-        @media (max-height: 1024px) {
+        height: 90vh;
+        @media (max-height: 1024px) and (max-width: 767px) {
             height: auto;
         }
         -webkit-box-shadow: 53px 24px 52px -4px rgba(184,182,184,1);
         -moz-box-shadow: 53px 24px 52px -4px rgba(184,182,184,1);
         box-shadow: 53px 24px 52px -4px rgba(184,182,184,1);
         border-radius: ${({ theme }) => theme.borderRadius};
-        @media (max-height: 1024px) {
+        @media (max-height: 1024px) and (max-width: 767px) {
             border-radius: 0px;
         }
         background-color: ${({ theme }) => theme.white};

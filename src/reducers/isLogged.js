@@ -1,7 +1,7 @@
 const loggedReducer = (state = false, action) => {
     switch (action.type) {
         case 'SIGN_IN':
-            return (state = action.payload)
+            return (state = action.payload.user.photoURL)
         default:
             return state
     }

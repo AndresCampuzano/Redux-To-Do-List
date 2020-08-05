@@ -14,6 +14,7 @@ export const AllReducers = combineReducers({
 // LocalStorage: persistState('list'),
 export const MainEnhancer = compose(
     persistState('list')
+    // persistState('isLogged')
     // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 // MainEnhancer are complements for Redux, it's optional to use them

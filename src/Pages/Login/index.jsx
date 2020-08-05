@@ -3,23 +3,34 @@ import { useDispatch } from 'react-redux'
 import { handleLoginAction } from '../../actions'
 import { navigate } from '@reach/router'
 
-import { firebaseConfig, githubAuthProvider } from '../../utils/firebase'
+import { firebaseConfig, googleAuthProvider } from '../../utils/firebase'
 
 const Login = () => {
     const dispatch = useDispatch()
 
-    const handleLoginWithGithub = () => {
+    // const handleLoginWithGithub = () => {
+    //     firebaseConfig
+    //         .auth()
+    //         .signInWithPopup(githubAuthProvider)
+    //         .then((response) => {
+    //             console.log(response)
+    //             dispatch(handleLoginAction(response))
+    //             navigate('/list')
+    //         })
+    //         .catch((error) => console.log(error))
+    // }
+    const handleLoginWithGoogle = () => {
         firebaseConfig
             .auth()
-            .signInWithPopup(githubAuthProvider)
+            .signInWithPopup(googleAuthProvider)
             .then((response) => {
                 console.log(response)
-                dispatch(handleLoginAction(true))
+                dispatch(handleLoginAction(response))
                 navigate('/list')
             })
             .catch((error) => console.log(error))
     }
-    const handleLogOutWithGithub = () => {
+    const handleLogOut = () => {
         firebaseConfig
             .auth()
             .signOut()
@@ -32,10 +43,13 @@ const Login = () => {
     return (
         <>
             <h1>Log in / Sign in with Github</h1>
-            <button type="button" onClick={handleLoginWithGithub}>
-                SIGN IN
+            {/* <button type="button" onClick={handleLoginWithGithub}>
+                SIGN IN GITHUB
+            </button> */}
+            <button type="button" onClick={handleLoginWithGoogle}>
+                SIGN IN GOOGLE
             </button>
-            <button type="button" onClick={handleLogOutWithGithub}>
+            <button type="button" onClick={handleLogOut}>
                 SIGN OUT
             </button>
         </>

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
     html {
@@ -6,6 +6,9 @@ const GlobalStyles = createGlobalStyle`
     }
     body {
         display: flex;
+        @media (max-height: 1024px) {
+            display: block;
+        }
         justify-content: center;
         align-items: center;
         margin: 0;
@@ -27,12 +30,21 @@ const GlobalStyles = createGlobalStyle`
     #root {
         margin: 0 auto;
         margin-top: 80px;
+        @media (max-height: 1024px) {
+            margin-top: 0px;
+        }
         width: ${({ theme }) => theme.width};
         height: 736px;
+        @media (max-height: 1024px) {
+            height: auto;
+        }
         -webkit-box-shadow: 53px 24px 52px -4px rgba(184,182,184,1);
         -moz-box-shadow: 53px 24px 52px -4px rgba(184,182,184,1);
         box-shadow: 53px 24px 52px -4px rgba(184,182,184,1);
         border-radius: ${({ theme }) => theme.borderRadius};
+        @media (max-height: 1024px) {
+            border-radius: 0px;
+        }
         background-color: ${({ theme }) => theme.white};
         overflow:auto;
         &::-webkit-scrollbar {
@@ -41,6 +53,6 @@ const GlobalStyles = createGlobalStyle`
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
     }
-`;
+`
 
-export default GlobalStyles;
+export default GlobalStyles

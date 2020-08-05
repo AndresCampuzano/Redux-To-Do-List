@@ -6,4 +6,4 @@ Using Redux to save on local storage the items of the list, also it has a delete
 
 ### Screenshot
 
-![TODO image](https://raw.githubusercontent.com/AndresCampuzano/Redux-To-Do-List/master/src/assets/images/phone.png)
+![TODO image](https://raw.githubusercontent.com/AndresCampuzano/Redux-To-Do-List/master/src/assets/images/Phone.png)
